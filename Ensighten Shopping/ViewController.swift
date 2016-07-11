@@ -26,7 +26,7 @@ class ViewController: UIViewController {
 
     func callAPI() {
         
-        let postEndpoint = "https://ensightendemo.com/etc/product-api.json"
+        let postEndpoint = "http://ensightendemo.com/etc/product-api.json"
         let session = NSURLSession.sharedSession()
         let url = NSURL(string: postEndpoint)!
         
