@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04DF5E6C9876066124EAE856 /* Pods_Ensighten_Shopping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D8473783B539FF2B66F73D /* Pods_Ensighten_Shopping.framework */; };
 		1307EAB71D342A4000CACCDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307EAB61D342A4000CACCDA /* AppDelegate.swift */; };
 		1307EAB91D342A4000CACCDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307EAB81D342A4000CACCDA /* ViewController.swift */; };
 		1307EABC1D342A4000CACCDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1307EABA1D342A4000CACCDA /* Main.storyboard */; };
 		1307EABF1D342A4000CACCDA /* Ensighten_Shopping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1307EABD1D342A4000CACCDA /* Ensighten_Shopping.xcdatamodeld */; };
 		1307EAC11D342A4000CACCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1307EAC01D342A4000CACCDA /* Assets.xcassets */; };
 		1307EAC41D342A4000CACCDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1307EAC21D342A4000CACCDA /* LaunchScreen.storyboard */; };
+		13EC919E1D34578B002185FD /* API Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC919D1D34578B002185FD /* API Handler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		1307EAC01D342A4000CACCDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1307EAC31D342A4000CACCDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1307EAC51D342A4000CACCDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13EC919D1D34578B002185FD /* API Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API Handler.swift"; sourceTree = "<group>"; };
+		61FD1BBE316B54DFF3BA60C9 /* Pods-Ensighten Shopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ensighten Shopping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ensighten Shopping/Pods-Ensighten Shopping.debug.xcconfig"; sourceTree = "<group>"; };
+		732B299EC482826D7BA1F264 /* Pods-Ensighten Shopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ensighten Shopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ensighten Shopping/Pods-Ensighten Shopping.release.xcconfig"; sourceTree = "<group>"; };
+		F3D8473783B539FF2B66F73D /* Pods_Ensighten_Shopping.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ensighten_Shopping.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DF5E6C9876066124EAE856 /* Pods_Ensighten_Shopping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		107AE0CF0415A06680D89283 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61FD1BBE316B54DFF3BA60C9 /* Pods-Ensighten Shopping.debug.xcconfig */,
+				732B299EC482826D7BA1F264 /* Pods-Ensighten Shopping.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1307EAAA1D342A4000CACCDA = {
 			isa = PBXGroup;
 			children = (
 				1307EAB51D342A4000CACCDA /* Ensighten Shopping */,
 				1307EAB41D342A4000CACCDA /* Products */,
+				107AE0CF0415A06680D89283 /* Pods */,
+				528867664EED735AA1AA96C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +76,9 @@
 			children = (
 				1307EAB61D342A4000CACCDA /* AppDelegate.swift */,
 				1307EAB81D342A4000CACCDA /* ViewController.swift */,
+				13EC919A1D345735002185FD /* Model */,
+				13EC919B1D34573F002185FD /* View */,
+				13EC919C1D345748002185FD /* Controller */,
 				1307EABA1D342A4000CACCDA /* Main.storyboard */,
 				1307EAC01D342A4000CACCDA /* Assets.xcassets */,
 				1307EAC21D342A4000CACCDA /* LaunchScreen.storyboard */,
@@ -67,6 +88,36 @@
 			path = "Ensighten Shopping";
 			sourceTree = "<group>";
 		};
+		13EC919A1D345735002185FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13EC919D1D34578B002185FD /* API Handler.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		13EC919B1D34573F002185FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		13EC919C1D345748002185FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		528867664EED735AA1AA96C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3D8473783B539FF2B66F73D /* Pods_Ensighten_Shopping.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1307EAC81D342A4000CACCDA /* Build configuration list for PBXNativeTarget "Ensighten Shopping" */;
 			buildPhases = (
+				6D37121C2240215CF4AA42F4 /* [CP] Check Pods Manifest.lock */,
 				1307EAAF1D342A4000CACCDA /* Sources */,
 				1307EAB01D342A4000CACCDA /* Frameworks */,
 				1307EAB11D342A4000CACCDA /* Resources */,
+				C5A3F80864F3E206140CD135 /* [CP] Embed Pods Frameworks */,
+				8B9958105C158C31D487B17D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,11 +187,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6D37121C2240215CF4AA42F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B9958105C158C31D487B17D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ensighten Shopping/Pods-Ensighten Shopping-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5A3F80864F3E206140CD135 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ensighten Shopping/Pods-Ensighten Shopping-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1307EAAF1D342A4000CACCDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EC919E1D34578B002185FD /* API Handler.swift in Sources */,
 				1307EAB91D342A4000CACCDA /* ViewController.swift in Sources */,
 				1307EABF1D342A4000CACCDA /* Ensighten_Shopping.xcdatamodeld in Sources */,
 				1307EAB71D342A4000CACCDA /* AppDelegate.swift in Sources */,
@@ -253,6 +356,7 @@
 		};
 		1307EAC91D342A4000CACCDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61FD1BBE316B54DFF3BA60C9 /* Pods-Ensighten Shopping.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Ensighten Shopping/Info.plist";
@@ -264,6 +368,7 @@
 		};
 		1307EACA1D342A4000CACCDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 732B299EC482826D7BA1F264 /* Pods-Ensighten Shopping.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Ensighten Shopping/Info.plist";
@@ -292,6 +397,7 @@
 				1307EACA1D342A4000CACCDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
