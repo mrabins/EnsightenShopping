@@ -14,7 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        callAPI()
+        callAPI({ products in
+            print(products)
+        }) { (errorMessage) in print(errorMessage)}
         
     }
 
