@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13FF51271E958E1800A69816 /* MaterialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF51261E958E1800A69816 /* MaterialCell.swift */; };
 		343A34EF1E940E2F00AE0555 /* ImageView+APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A34EE1E940E2F00AE0555 /* ImageView+APIRequest.swift */; };
 		343A34F11E940F0A00AE0555 /* NoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 343A34F01E940F0A00AE0555 /* NoImage.png */; };
 		343A34F31E94115900AE0555 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A34F21E94115900AE0555 /* ProductViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13FF51261E958E1800A69816 /* MaterialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialCell.swift; sourceTree = "<group>"; };
 		343A34EE1E940E2F00AE0555 /* ImageView+APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+APIRequest.swift"; sourceTree = "<group>"; };
 		343A34F01E940F0A00AE0555 /* NoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoImage.png; sourceTree = "<group>"; };
 		343A34F21E94115900AE0555 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		34BB9CE01E93FD77000F30F7 = {
 			isa = PBXGroup;
 			children = (
+				13FF51261E958E1800A69816 /* MaterialCell.swift */,
 				34BB9CEB1E93FD77000F30F7 /* Shopping Training App */,
 				34BB9CEA1E93FD77000F30F7 /* Products */,
 			);
@@ -183,6 +186,7 @@
 				34A992601E9409AB00A33D5E /* ProductsTableViewCell.swift in Sources */,
 				34BB9D011E93FDCC000F30F7 /* Product.swift in Sources */,
 				343A34F31E94115900AE0555 /* ProductViewController.swift in Sources */,
+				13FF51271E958E1800A69816 /* MaterialCell.swift in Sources */,
 				343A34EF1E940E2F00AE0555 /* ImageView+APIRequest.swift in Sources */,
 				34BB9CED1E93FD77000F30F7 /* AppDelegate.swift in Sources */,
 				34BB9CFF1E93FDA2000F30F7 /* API Handler.swift in Sources */,
