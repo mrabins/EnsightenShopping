@@ -56,11 +56,26 @@ extension ProductsViewController : UITableViewDataSource {
         
         let product = self.products[indexPath.row]
         
+        // Setting Product Title
+        
         if product.title == nil || product.title == "" {
             productsCell.productLabel?.text = "Invalid Product."
         } else {
             productsCell.productLabel?.text = product.title!
         }
+        
+        
+        // Setting Price Label
+        
+        if product.price == nil || product.title == "" {
+            productsCell.priceLabel?.text = "$ 95.00"
+        } else {
+            productsCell.priceLabel?.text = "$ " + product.price!
+        }
+        
+        
+        
+        
         
         productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
         
