@@ -16,6 +16,8 @@ class ProductsViewController: UIViewController {
     var products: [Product] = []
     var productsCell = ProductsTableViewCell()
     let cellIdentifier = "MyCell"
+    var tappedProductName = String()
+    
     
     
     override func viewDidLoad() {
@@ -38,10 +40,8 @@ class ProductsViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let selectedIndexPath = productsTableView.indexPathForSelectedRow
-        //print(selectedIndexPath)
-        let selectedProduct = products[(selectedIndexPath?.row)!]
-        let destinationVC = segue.destination
+       
+        
         
     }
     
@@ -86,10 +86,6 @@ extension ProductsViewController : UITableViewDataSource {
             productsCell.priceLabel?.text = "$ " + product.price!
         }
         
-        
-        
-        
-        
         productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
         
         return productsCell
@@ -103,11 +99,11 @@ extension ProductsViewController : UITableViewDataSource {
 extension ProductsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRow(at: indexPath!)! as! ProductsTableViewCell
+        tappedProductName = currentCell.productLabel.text!
         
-        
-        
-        
-        let selectedProduct = tableView.cellForRow(at: indexPath!) as 
+        performSegue(withIdentifier: "", sender: self)
+
         
     }
 }
