@@ -48,5 +48,21 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Montserrat-Black</string>
+		<string>Montserrat-Bold</string>
+		<string>Montserrat-ExtraBold</string>
+		<string>Montserrat-Light</string>
+		<string>Montserrat-ExtraBold</string>
+		<string>Montserrat-Medium</string>
+		<string>Montserrat-Regular</string>
+		<string>Montserrat-SemiBold</string>
+		<string>MontserratAlternates-ExtraLight</string>
+		<string>MontserratAlternates-Light</string>
+		<string>MontserratAlternates-Medium</string>
+		<string>MontserratAlternates-Regular</string>
+		<string>MontserratAlternates-SemiBold</string>
+	</array>
 </dict>
 </plist>

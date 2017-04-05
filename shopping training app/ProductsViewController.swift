@@ -21,9 +21,11 @@ class ProductsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpNavBar()
+        
         productsTableView.delegate = self
         productsTableView.dataSource = self
-        // Do any additional setup after loading the view, typically from a nib.
+
         
         APIHandler.callAPI({ products in
             self.products = products
@@ -46,6 +48,17 @@ class ProductsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setUpNavBar() {
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        imageView.contentMode = .scaleAspectFit
+        
+        let imageLogo = UIImage(named: "Hosoren Logo")
+        imageView.image = imageLogo
+        
+        navigationItem.titleView = imageView
+        
     }
 }
 
@@ -88,15 +101,15 @@ extension ProductsViewController : UITableViewDataSource {
 }
 
 extension ProductsViewController : UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let indexPath = tableView.indexPathForSelectedRow
-//        
-//        
-//        
-//        
-//        let selectedProduct = tableView.cellForRow(at: indexPath!) as 
-//        
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow
+        
+        
+        
+        
+        let selectedProduct = tableView.cellForRow(at: indexPath!) as 
+        
+    }
 }
 
 
