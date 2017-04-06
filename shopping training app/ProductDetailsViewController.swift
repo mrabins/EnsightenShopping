@@ -11,13 +11,24 @@ import UIKit
 class ProductDetailsViewController: UIViewController {
 
     var product:Product!
+    var productName = String()
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("product: + \(product)")
         
-        view.backgroundColor = UIColor.blue
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: UIImage(named: "prev_menu_btn"), style: .done, target: nil, action: nil)
         
+        self.navigationItem.title = productName
+
+       
+
+        
+        
+        
+
+    
     }
 
     override func didReceiveMemoryWarning() {
