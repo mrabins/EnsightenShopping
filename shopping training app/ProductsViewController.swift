@@ -28,9 +28,8 @@ class ProductsViewController: UIViewController {
         
         productsTableView.delegate = self
         productsTableView.dataSource = self
-        searchBar.delegate = self
         
-        //        searchBar.showsScopeBar = true
+        searchBar.delegate = self
         
         APIHandler.callAPI({ products in
             self.products = products
@@ -39,19 +38,14 @@ class ProductsViewController: UIViewController {
                 self.productsTableView.reloadData()
             }
         }) { (errorMessage) in print(errorMessage)}
-        
-        
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "productToDetailsSegue" {
             let vc = segue.destination as! ProductDetailsViewController
-            vc.productName = tappedProductName
+            let product = sender as! Product
+            vc.product = product
         }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,26 +102,31 @@ extension ProductsViewController : UITableViewDataSource {
 extension ProductsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow
-        let currentCell = tableView.cellForRow(at: indexPath!)! as! ProductsTableViewCell
-        tappedProductName = currentCell.productLabel.text!
+        let product = products[(indexPath?.row)!]
         
-        performSegue(withIdentifier: "productToDetailsSegue", sender: nil)
+        performSegue(withIdentifier: "productToDetailsSegue", sender: product)
     }
 }
 
 extension ProductsViewController: UISearchBarDelegate, UISearchResultsUpdating {
-    
     @available(iOS 8.0, *)
     func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        filterContextForSearchText(searchController.searchBar.text!)
+        
+    }
+
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterContextForSearchText(searchBar.text!)
         searchBar.showsCancelButton = false
     }
     
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print("searchBarTextDidBeginEditing")
         isSearchBarActive = true
         searchBar.showsCancelButton = true
+        print("did begin test \(searchBar.text!)")
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
@@ -149,13 +148,19 @@ extension ProductsViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func filterContextForSearchText(_ searchText: String) {
         isSearchBarActive = true
         
-        let flattenedProducts = products.flatMap { $0 }
-        filteredProducts = flattenedProducts.filter ({(products) -> Bool in
         
-        let filteredProducts = products.title
+        let flattenedProducts = products.map { $0 }
+        
+        filteredProducts = flattenedProducts.filter ({(products) -> Bool in
+            print("Products: \(products)" )
+            
+            let filteredProducts = products.title
+            print("I am \(filteredProducts) ")
+            
+            
+            
+            
             return (filteredProducts?.contains(searchText))!
-            
-            
         })
         self.productsTableView.reloadData()
     }
