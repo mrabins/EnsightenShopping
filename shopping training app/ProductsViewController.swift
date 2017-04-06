@@ -29,8 +29,8 @@ class ProductsViewController: UIViewController {
         productsTableView.delegate = self
         productsTableView.dataSource = self
         searchBar.delegate = self
-
-        searchBar.showsScopeBar = true
+        
+        //        searchBar.showsScopeBar = true
         
         APIHandler.callAPI({ products in
             self.products = products
@@ -39,6 +39,9 @@ class ProductsViewController: UIViewController {
                 self.productsTableView.reloadData()
             }
         }) { (errorMessage) in print(errorMessage)}
+        
+        
+        
         
     }
     
@@ -87,7 +90,6 @@ extension ProductsViewController : UITableViewDataSource {
         } else {
             productsCell.priceLabel?.text = "$ " + product.price!
         }
-        
         productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
         
         return productsCell
@@ -114,11 +116,11 @@ extension ProductsViewController : UITableViewDelegate {
 }
 
 extension ProductsViewController: UISearchBarDelegate, UISearchResultsUpdating {
+    
     @available(iOS 8.0, *)
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
-        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-        filterContextForSearchText(searchController.searchBar.text!, scope: scope)
+        filterContextForSearchText(searchController.searchBar.text!)
         searchBar.showsCancelButton = false
     }
     
@@ -126,38 +128,34 @@ extension ProductsViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         isSearchBarActive = true
         searchBar.showsCancelButton = true
-        print("HELLO searchText \(String(describing: searchBar.text))")
-
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         isSearchBarActive = false
         searchBar.showsCancelButton = false
-
+        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isSearchBarActive = false
         searchBar.showsCancelButton = true
         searchBar.endEditing(true)
-
-        print("print anything ")
-
-
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         isSearchBarActive = false
     }
     
-    func filterContextForSearchText(_ searchText: String, scope: String = "Products") {
+    func filterContextForSearchText(_ searchText: String) {
         isSearchBarActive = true
         
         let flattenedProducts = products.flatMap { $0 }
-        
         filteredProducts = flattenedProducts.filter ({(products) -> Bool in
-            let matchedProducts = (scope == searchText)
-            return matchedProducts
+        
+        let filteredProducts = products.title
+            return (filteredProducts?.contains(searchText))!
+            
+            
         })
         self.productsTableView.reloadData()
     }
