@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13BAEDDF1E98542B0094589D /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BAEDDE1E98542B0094589D /* CartViewController.swift */; };
 		13FF51271E958E1800A69816 /* MaterialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FF51261E958E1800A69816 /* MaterialCell.swift */; };
 		13FF51641E9598E700A69816 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13FF51511E9598E700A69816 /* Montserrat-Black.otf */; };
 		13FF51651E9598E700A69816 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13FF51521E9598E700A69816 /* Montserrat-Bold.otf */; };
@@ -35,7 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13FF51261E958E1800A69816 /* MaterialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialCell.swift; sourceTree = "<group>"; };
+		13BAEDDE1E98542B0094589D /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		13FF51261E958E1800A69816 /* MaterialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaterialCell.swift; path = ../MaterialCell.swift; sourceTree = "<group>"; };
 		13FF51511E9598E700A69816 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
 		13FF51521E9598E700A69816 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		13FF51531E9598E700A69816 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -75,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13BAEDDD1E98491E0094589D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13FF51261E958E1800A69816 /* MaterialCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		13FF514F1E95984E00A69816 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 				34BB9CEE1E93FD77000F30F7 /* ProductsViewController.swift */,
 				34A9925F1E9409AB00A33D5E /* ProductsTableViewCell.swift */,
 				343A34EE1E940E2F00AE0555 /* ImageView+APIRequest.swift */,
+				13BAEDDE1E98542B0094589D /* CartViewController.swift */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				13FF51771E96B74A00A69816 /* Todo.rtf */,
-				13FF51261E958E1800A69816 /* MaterialCell.swift */,
 				34BB9CEB1E93FD77000F30F7 /* Shopping Training App */,
 				34BB9CEA1E93FD77000F30F7 /* Products */,
 			);
@@ -152,6 +162,7 @@
 				34BB9CEC1E93FD77000F30F7 /* AppDelegate.swift */,
 				34BB9CFE1E93FDA2000F30F7 /* API Handler.swift */,
 				34BB9D001E93FDCC000F30F7 /* Product.swift */,
+				13BAEDDD1E98491E0094589D /* View */,
 				34A9925D1E94096200A33D5E /* Products */,
 				34A9925C1E94095300A33D5E /* Product */,
 				34A9925E1E94096D00A33D5E /* Model */,
@@ -257,6 +268,7 @@
 				13FF51271E958E1800A69816 /* MaterialCell.swift in Sources */,
 				343A34EF1E940E2F00AE0555 /* ImageView+APIRequest.swift in Sources */,
 				34BB9CED1E93FD77000F30F7 /* AppDelegate.swift in Sources */,
+				13BAEDDF1E98542B0094589D /* CartViewController.swift in Sources */,
 				34BB9CFF1E93FDA2000F30F7 /* API Handler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

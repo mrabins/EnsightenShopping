@@ -45,6 +45,7 @@ class ProductsViewController: UIViewController {
             let vc = segue.destination as! ProductDetailsViewController
             let product = sender as! Product
             vc.product = product
+            vc.segueString = "productToDetailsSegue"
         }
     }
     
@@ -60,7 +61,7 @@ class ProductsViewController: UIViewController {
         let imageLogo = UIImage(named: "Hosoren Logo")
         
         imageView.image = imageLogo
-        navigationItem.titleView = imageView
+        navigationItem.titleView = imageView        
     }
 }
 
@@ -155,10 +156,6 @@ extension ProductsViewController: UISearchBarDelegate, UISearchResultsUpdating {
             
             let filteredProducts = products.title
             print("I am \(filteredProducts) ")
-            
-            
-            
-            
             return (filteredProducts?.contains(searchText))!
         })
         self.productsTableView.reloadData()
