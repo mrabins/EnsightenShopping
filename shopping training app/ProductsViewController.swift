@@ -80,9 +80,9 @@ extension ProductsViewController : UITableViewDataSource {
         
         // Setting Price Label
         if product.price == nil || product.title == "" {
-            productsCell.priceLabel?.text = "$ 95.00"
+            productsCell.priceLabel?.text = "$95.00"
         } else {
-            productsCell.priceLabel?.text = "$ " + product.price!
+            productsCell.priceLabel?.text = "$" + product.price!
         }
         productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
         
@@ -103,7 +103,6 @@ extension ProductsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow
         let product = products[(indexPath?.row)!]
-        
         performSegue(withIdentifier: "productToDetailsSegue", sender: product)
     }
 }

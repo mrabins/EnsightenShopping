@@ -11,8 +11,8 @@ import UIKit
 
 extension UIImageView {
     public func imageFromServerURL(urlString: String, defaultImage : String?) {
-        if let di = defaultImage {
-            self.image = UIImage(named: di)
+        if let myDefaultImage = defaultImage {
+            self.image = UIImage(named: myDefaultImage)
         }
         
         URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
