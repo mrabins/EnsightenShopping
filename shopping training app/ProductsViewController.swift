@@ -2,7 +2,7 @@
 //  ProductsViewController.swift
 //  Shopping Training App
 //
-//  Created by Eliot Arntz on 4/4/17.
+//  Created by Mark Rabins on 4/4/17.
 //  Copyright © 2017 Ensighten Inc. All rights reserved.
 //
 
@@ -61,7 +61,7 @@ class ProductsViewController: UIViewController {
         let imageLogo = UIImage(named: "Hosoren Logo")
         
         imageView.image = imageLogo
-        navigationItem.titleView = imageView        
+        navigationItem.titleView = imageView
     }
 }
 
@@ -111,9 +111,9 @@ extension ProductsViewController : UITableViewDelegate {
 extension ProductsViewController: UISearchBarDelegate, UISearchResultsUpdating {
     @available(iOS 8.0, *)
     func updateSearchResults(for searchController: UISearchController) {
-        
+     filterContextForSearchText(searchController.searchBar.text!)
     }
-
+    
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -148,17 +148,15 @@ extension ProductsViewController: UISearchBarDelegate, UISearchResultsUpdating {
     func filterContextForSearchText(_ searchText: String) {
         isSearchBarActive = true
         
-        
         let flattenedProducts = products.map { $0 }
         
-        filteredProducts = flattenedProducts.filter ({(products) -> Bool in
-            print("Products: \(products)" )
-            
-            let filteredProducts = products.title
-            print("I am \(filteredProducts) ")
-            return (filteredProducts?.contains(searchText))!
-        })
+        filteredProducts = flattenedProducts.filter { product in
+            return (product.title?.lowercased().contains(searchText.lowercased()))!
+        
+        }
         self.productsTableView.reloadData()
+
     }
+
 }
 
