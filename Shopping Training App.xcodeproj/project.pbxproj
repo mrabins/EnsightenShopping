@@ -33,6 +33,7 @@
 		34BB9CF71E93FD77000F30F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BB9CF51E93FD77000F30F7 /* LaunchScreen.storyboard */; };
 		34BB9CFF1E93FDA2000F30F7 /* API Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BB9CFE1E93FDA2000F30F7 /* API Handler.swift */; };
 		34BB9D011E93FDCC000F30F7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BB9D001E93FDCC000F30F7 /* Product.swift */; };
+		34D1F1551E9EB72F0041A3A8 /* ShoppingTrainingApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34D1F1531E9EB72F0041A3A8 /* ShoppingTrainingApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		34BB9CF81E93FD77000F30F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34BB9CFE1E93FDA2000F30F7 /* API Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API Handler.swift"; sourceTree = "<group>"; };
 		34BB9D001E93FDCC000F30F7 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		34D1F1541E9EB72F0041A3A8 /* ShoppingTrainingApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingTrainingApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		34A9925E1E94096D00A33D5E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				34D1F1531E9EB72F0041A3A8 /* ShoppingTrainingApp.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				34A992601E9409AB00A33D5E /* ProductsTableViewCell.swift in Sources */,
 				34BB9D011E93FDCC000F30F7 /* Product.swift in Sources */,
 				343A34F31E94115900AE0555 /* ProductDetailsViewController.swift in Sources */,
+				34D1F1551E9EB72F0041A3A8 /* ShoppingTrainingApp.xcdatamodeld in Sources */,
 				13FF51271E958E1800A69816 /* MaterialCell.swift in Sources */,
 				343A34EF1E940E2F00AE0555 /* ImageView+APIRequest.swift in Sources */,
 				34BB9CED1E93FD77000F30F7 /* AppDelegate.swift in Sources */,
@@ -390,6 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Shopping Training App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ENS.Shopping-Training-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Shopping Training App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ENS.Shopping-Training-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,6 +437,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		34D1F1531E9EB72F0041A3A8 /* ShoppingTrainingApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				34D1F1541E9EB72F0041A3A8 /* ShoppingTrainingApp.xcdatamodel */,
+			);
+			currentVersion = 34D1F1541E9EB72F0041A3A8 /* ShoppingTrainingApp.xcdatamodel */;
+			name = ShoppingTrainingApp.xcdatamodeld;
+			path = "../shopping training app/ShoppingTrainingApp.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 34BB9CE11E93FD77000F30F7 /* Project object */;
 }

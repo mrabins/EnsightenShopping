@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="32S-yt-YQS">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="32S-yt-YQS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="268" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V1u-Np-ead">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MyCell" rowHeight="250" id="YV1-ml-ODI" customClass="ProductsTableViewCell" customModule="Shopping_Training_App">
@@ -89,7 +89,7 @@
                                                     <rect key="frame" x="50" y="8" width="275" height="155"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvQ-X9-CjC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="kvQ-X9-CjC">
                                                     <rect key="frame" x="50" y="178" width="275" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
@@ -116,18 +116,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFh-cV-S5R">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="V1u-Np-ead" secondAttribute="bottom" id="Me3-PT-yFc"/>
-                            <constraint firstItem="V1u-Np-ead" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Mq1-8d-Wc5"/>
-                            <constraint firstItem="V1u-Np-ead" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="oeA-7v-Lxj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V1u-Np-ead" secondAttribute="trailing" constant="-16" id="pte-2a-a0y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V1u-Np-ead" secondAttribute="trailing" constant="-16" id="9fa-GV-g1R"/>
+                            <constraint firstItem="V1u-Np-ead" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="CKx-vO-lhw"/>
+                            <constraint firstItem="V1u-Np-ead" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="DJM-pG-hi9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="V1u-Np-ead" secondAttribute="bottom" id="wzn-7E-6Hc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NnI-AW-MuI">
@@ -139,7 +134,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="productsTableView" destination="V1u-Np-ead" id="DFO-Gp-mkZ"/>
-                        <outlet property="searchBar" destination="GFh-cV-S5R" id="GWO-87-09g"/>
                         <segue destination="dgf-LC-TQW" kind="show" identifier="productToDetailsSegue" id="5s1-n3-2J6"/>
                     </connections>
                 </viewController>
@@ -172,6 +166,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="titleButtonPressed:" destination="dgf-LC-TQW" eventType="touchUpInside" id="7h6-ZZ-tJA"/>
                                     <segue destination="3ix-TF-tfR" kind="show" id="kGh-4B-62N"/>
                                 </connections>
                             </button>
@@ -247,14 +242,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLQ-a3-2fp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2496.8000000000002" y="106.59670164917542"/>
+            <point key="canvasLocation" x="2183" y="-546"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j1O-Y5-95Y">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="32S-yt-YQS" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iRd-ak-E8N">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iRd-ak-E8N">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

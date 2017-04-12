@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ProductDetailsViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var productPrice: UITextField!
     @IBOutlet weak var checkOutButton: UIButton!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     var segueString = String()
     
     var product:Product!
@@ -23,7 +26,7 @@ class ProductDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buttonTitle()
+        setupUI()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(image: UIImage(named: "prev_menu_btn"), style: .done, target: nil, action: nil)
         self.navigationItem.title = product.title
@@ -37,6 +40,14 @@ class ProductDetailsViewController: UIViewController {
         productDescription.text = removeHTMLFromString(text: product.content!)
     }
     
+    func setupUI() {
+        if segueString == "productToDetailsSegue" {
+            checkOutButton.setTitle("Add To Cart", for: .normal)
+        } else {
+            checkOutButton.setTitle("Check Out", for: .normal)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,12 +59,35 @@ class ProductDetailsViewController: UIViewController {
         return str!
     }
     
-    func buttonTitle() {
+// Mark: IBActions
+    
+    @IBAction func titleButtonPressed(_ sender: UIButton) {
+        //right now button will only add items to cart if the segue is the proper name
         if segueString == "productToDetailsSegue" {
-            checkOutButton.setTitle("Add To Cart", for: .normal)
-        } else {
-            checkOutButton.setTitle("Check Out", for: .normal)
+            
+            let managedObjectContext = appDelegate.persistentContainer.viewContext
+            
+            let productModel = NSEntityDescription.insertNewObject(forEntityName: "Productmodel", into: managedObjectContext) as! Productmodel
+            
+            productModel.id = product.id
+            productModel.title = product.title
+            productModel.content = product.content
+            productModel.salePrice = product.salePrice
+            productModel.regularPrice = product.regularPrice
+            productModel.price = product.price
+            productModel.image = product.image
+            
+            print(productModel)
+            
+            do {
+                try managedObjectContext.save()
+            } catch {
+                fatalError("Failure to save context: \(error)")
+            }
         }
         
     }
+    
+    
+    
 }

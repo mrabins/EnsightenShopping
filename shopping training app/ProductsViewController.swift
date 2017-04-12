@@ -2,7 +2,7 @@
 //  ProductsViewController.swift
 //  Shopping Training App
 //
-//  Created by Eliot Arntz on 4/4/17.
+//  Created by Mark Rabins on 4/4/17.
 //  Copyright © 2017 Ensighten Inc. All rights reserved.
 //
 
@@ -18,18 +18,24 @@ class ProductsViewController: UIViewController {
     
     let cellIdentifier = "MyCell"
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    let searchController = UISearchController(searchResultsController: nil)
+    
     @IBOutlet weak var productsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        definesPresentationContext = true
+        searchController.dimsBackgroundDuringPresentation = false
+
+        productsTableView.tableHeaderView = searchController.searchBar
+
         setUpNavBar()
         
         productsTableView.delegate = self
         productsTableView.dataSource = self
-        
-        searchBar.delegate = self
         
         APIHandler.callAPI({ products in
             self.products = products
@@ -61,8 +67,16 @@ class ProductsViewController: UIViewController {
         let imageLogo = UIImage(named: "Hosoren Logo")
         
         imageView.image = imageLogo
-        navigationItem.titleView = imageView        
+        navigationItem.titleView = imageView
     }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredProducts = products.filter({( product : Product) -> Bool in
+            return product.title!.lowercased().contains(searchText.lowercased())
+        })
+        productsTableView.reloadData()
+    }
+    
 }
 
 extension ProductsViewController : UITableViewDataSource {
@@ -70,7 +84,13 @@ extension ProductsViewController : UITableViewDataSource {
         
         productsCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProductsTableViewCell
         
-        let product = self.products[indexPath.row]
+        let product: Product
+
+        if searchController.isActive && searchController.searchBar.text != "" {
+            product = filteredProducts[indexPath.row]
+        } else {
+            product = products[indexPath.row]
+        }
         
         // Setting Product Title
         if product.title == nil || product.title == "" {
@@ -92,11 +112,12 @@ extension ProductsViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if isSearchBarActive == true {
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
             return filteredProducts.count
-        } else {
-            return products.count
         }
+        return products.count
+
     }
 }
 
@@ -108,57 +129,16 @@ extension ProductsViewController : UITableViewDelegate {
     }
 }
 
-extension ProductsViewController: UISearchBarDelegate, UISearchResultsUpdating {
-    @available(iOS 8.0, *)
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
 
-    
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filterContextForSearchText(searchBar.text!)
-        searchBar.showsCancelButton = false
+extension ProductsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filterContentForSearchText(searchBar.text!)
     }
-    
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        print("searchBarTextDidBeginEditing")
-        isSearchBarActive = true
-        searchBar.showsCancelButton = true
-        print("did begin test \(searchBar.text!)")
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        isSearchBarActive = false
-        searchBar.showsCancelButton = false
-        
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearchBarActive = false
-        searchBar.showsCancelButton = true
-        searchBar.endEditing(true)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        isSearchBarActive = false
-    }
-    
-    func filterContextForSearchText(_ searchText: String) {
-        isSearchBarActive = true
-        
-        
-        let flattenedProducts = products.map { $0 }
-        
-        filteredProducts = flattenedProducts.filter ({(products) -> Bool in
-            print("Products: \(products)" )
-            
-            let filteredProducts = products.title
-            print("I am \(filteredProducts) ")
-            return (filteredProducts?.contains(searchText))!
-        })
-        self.productsTableView.reloadData()
+}
+
+extension ProductsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }
 

@@ -7,20 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
 class CartViewController: UIViewController {
     
     var productsVC = ProductsViewController()
     
-
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         productsVC.setUpNavBar()
         
-        print("I was called")
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        let productsFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Productmodel")
         
+        do {
+            let fetchedProducts = try managedObjectContext.fetch(productsFetch) as! [Productmodel]
+            print(fetchedProducts)
+            //call tableViewReload Data here..
+
+        } catch {
+            fatalError("Failed to fetch products: \(error)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
