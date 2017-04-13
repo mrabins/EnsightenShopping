@@ -12,8 +12,13 @@ import CoreData
 class CartViewController: UIViewController {
     
     var productsVC = ProductsViewController()
+    var productsCell = ProductsTableViewCell()
+    
+    let cellIdentifier = "cartCell"
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+    @IBOutlet weak var cartTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +31,9 @@ class CartViewController: UIViewController {
         do {
             let fetchedProducts = try managedObjectContext.fetch(productsFetch) as! [Productmodel]
             print(fetchedProducts)
+            
             //call tableViewReload Data here..
+            cartTableView.reloadData()
 
         } catch {
             fatalError("Failed to fetch products: \(error)")
@@ -50,3 +57,26 @@ class CartViewController: UIViewController {
     */
 
 }
+
+extension CartViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        productsCell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! ProductsTableViewCell
+        
+        
+        
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+

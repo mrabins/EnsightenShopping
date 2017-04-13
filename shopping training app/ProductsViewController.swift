@@ -79,7 +79,7 @@ class ProductsViewController: UIViewController {
     
 }
 
-extension ProductsViewController : UITableViewDataSource {
+extension ProductsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         productsCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProductsTableViewCell
@@ -121,7 +121,7 @@ extension ProductsViewController : UITableViewDataSource {
     }
 }
 
-extension ProductsViewController : UITableViewDelegate {
+extension ProductsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow
         let product = products[(indexPath?.row)!]
