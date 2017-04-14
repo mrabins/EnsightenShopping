@@ -30,7 +30,7 @@ class CartViewController: UIViewController {
         
         do {
             let fetchedProducts = try managedObjectContext.fetch(productsFetch) as! [Productmodel]
-            print(fetchedProducts)
+            print("I am fetched:", fetchedProducts)
             
             //call tableViewReload Data here..
             cartTableView.reloadData()
@@ -58,18 +58,18 @@ class CartViewController: UIViewController {
 
 }
 
-extension CartViewController: UITableViewDataSource {
+//extension CartViewController: UITableViewDataSource {
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//        productsCell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! ProductsTableViewCell
+//        
+//        
+//        
+//        
+//    }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        productsCell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! ProductsTableViewCell
-        
-        
-        
-        
-    }
-    
-}
+//}
 
 
 
