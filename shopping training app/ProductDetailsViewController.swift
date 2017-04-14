@@ -18,6 +18,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var checkOutButton: UIButton!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let yellowColor = UIColor(red: 255.0/255.0, green: 180.0/255.0, blue: 0/255.0, alpha: 0.5)
     
     var segueString = String()
     
@@ -38,13 +39,21 @@ class ProductDetailsViewController: UIViewController {
             productPrice.text = "$95.00"
         }
         productDescription.text = removeHTMLFromString(text: product.content!)
-//        productImage.image = UIImage(named: product.image!)
-        
         productImage.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
+        productImage.layer.cornerRadius = 3.0
+        productImage.layer.shadowOpacity = 2.5
+        productImage.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
+        productImage.layer.shadowColor = yellowColor.cgColor
 
     }
     
     func setupUI() {
+        
+        checkOutButton.backgroundColor = yellowColor.withAlphaComponent(1.0)
+        checkOutButton.layer.shadowOpacity = 2
+        checkOutButton.layer.shadowOffset = CGSize(width: 0.50, height: 1.0)
+        checkOutButton.layer.shadowColor = UIColor.black.cgColor
+
         if segueString == "productToDetailsSegue" {
             checkOutButton.setTitle("Add To Cart", for: .normal)
         } else {

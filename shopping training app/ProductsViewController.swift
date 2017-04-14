@@ -108,6 +108,7 @@ extension ProductsViewController: UITableViewDataSource {
         productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
         
         return productsCell
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
