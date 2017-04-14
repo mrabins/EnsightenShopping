@@ -38,6 +38,10 @@ class ProductDetailsViewController: UIViewController {
             productPrice.text = "$95.00"
         }
         productDescription.text = removeHTMLFromString(text: product.content!)
+//        productImage.image = UIImage(named: product.image!)
+        
+        productImage.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
+
     }
     
     func setupUI() {
