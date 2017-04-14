@@ -129,7 +129,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NnI-AW-MuI">
-                        <barButtonItem key="rightBarButtonItem" title="Cart" id="Tbe-OA-hFU">
+                        <barButtonItem key="rightBarButtonItem" image="shoppingbasket" id="Tbe-OA-hFU">
                             <connections>
                                 <segue destination="S7y-GN-yaq" kind="show" id="EMM-sa-G2R"/>
                             </connections>
@@ -219,4 +219,7 @@
             <point key="canvasLocation" x="140" y="102.99850074962519"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shoppingbasket" width="24" height="24"/>
+    </resources>
 </document>

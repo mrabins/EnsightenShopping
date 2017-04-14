@@ -31,7 +31,9 @@ class ProductsViewController: UIViewController {
         searchController.dimsBackgroundDuringPresentation = false
 
         productsTableView.tableHeaderView = searchController.searchBar
-
+        
+        self.navigationItem.rightBarButtonItem?.image = UIImage(named:"shoppingbasket")?.withRenderingMode(.alwaysOriginal)
+        
         setUpNavBar()
         
         productsTableView.delegate = self
