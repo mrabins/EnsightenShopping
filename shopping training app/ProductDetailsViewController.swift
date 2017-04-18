@@ -29,9 +29,11 @@ class ProductDetailsViewController: UIViewController {
         
         setupUI()
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: UIImage(named: "prev_menu_btn"), style: .done, target: nil, action: nil)
+//
+//        self.navigationItem.backBarButtonItem = UIBarButtonItem(image: UIImage(named: "prev_menu_btn"), style: .done, target: nil, action: nil)
+        
+        
         self.navigationItem.title = product.title
-        productImage.image = UIImage(named: product.image!)
         
         if let productPriceText = product.price {
             productPrice.text = "$ " + productPriceText
