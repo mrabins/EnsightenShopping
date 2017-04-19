@@ -13,7 +13,14 @@ class CartViewController: UIViewController {
     
     var productsVC = ProductsViewController()
     var productsCell = ProductsTableViewCell()
-    var products = [Product]()
+    
+    
+    
+    var products = [Product]() {
+        didSet {
+            updateView()
+        }
+    }
     
     
     let cellIdentifier = "cartCell"
@@ -21,16 +28,24 @@ class CartViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     @IBOutlet weak var cartTableView: UITableView!
+    @IBOutlet weak var statusLabel: UILabel!
+
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         productsVC.setUpNavBar()
         
+        
+        setupView()
+        
         let managedObjectContext = appDelegate.persistentContainer.viewContext
         let productsFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Productmodel")
         
         do {
+            
             let fetchedProducts = try managedObjectContext.fetch(productsFetch) as! [Productmodel]
             print("I am fetched:", fetchedProducts)
             
@@ -42,10 +57,27 @@ class CartViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func updateView() {
+        let hasProducts = products.count > 0
+        
+        cartTableView.isHidden = !hasProducts
+        
+        // Hsndle UI Background if not items in the cart
+        statusLabel.isHidden = hasProducts
     }
+    
+    private func setupView() {
+        setUpStatusLabel()
+        
+        updateView()
+        
+        print("IWAS CALLED  setupView")
+    }
+    
+    private func setUpStatusLabel() {
+        statusLabel.text = "You don't have any items in your cart"
+    }
+
     
 
     /*
@@ -69,7 +101,7 @@ extension CartViewController: UITableViewDataSource {
         productsCell.productLabel?.text = self.products.description
         productsCell.priceLabel?.text =  "$" + self.products.debugDescription
         
-        productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
+//        productsCell.productImageView.imageFromServerURL(urlString: products.image!, defaultImage: "NoImage")
         
         return productsCell
         
