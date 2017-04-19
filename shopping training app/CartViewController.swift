@@ -13,6 +13,8 @@ class CartViewController: UIViewController {
     
     var productsVC = ProductsViewController()
     var productsCell = ProductsTableViewCell()
+    var products = [Product]()
+    
     
     let cellIdentifier = "cartCell"
     
@@ -58,21 +60,40 @@ class CartViewController: UIViewController {
 
 }
 
-//extension CartViewController: UITableViewDataSource {
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        productsCell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! ProductsTableViewCell
-//        
-//        
-//        
-//        
-//    }
+extension CartViewController: UITableViewDataSource {
 
-//}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        productsCell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath) as! ProductsTableViewCell
+        
+        productsCell.productLabel?.text = self.products.description
+        productsCell.priceLabel?.text =  "$" + self.products.debugDescription
+        
+        productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
+        
+        return productsCell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return products.count
+    }
 
+}
 
+extension CartViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexPath = cartTableView.indexPathForSelectedRow
+        let product = products[(indexPath?.row)!]
+        
+        // ** Handle segue **
+        
+        performSegue(withIdentifier: "", sender: product)
 
+    }
+}
+
+// Handle adding/removal of items in the tableView
 
 
 
