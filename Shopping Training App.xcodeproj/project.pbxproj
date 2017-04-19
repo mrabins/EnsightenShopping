@@ -22,7 +22,7 @@
 		13FF51731E9598E700A69816 /* MontserratAlternates-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13FF51601E9598E700A69816 /* MontserratAlternates-Regular.otf */; };
 		13FF51741E9598E700A69816 /* MontserratAlternates-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13FF51611E9598E700A69816 /* MontserratAlternates-SemiBold.otf */; };
 		13FF51761E9598E700A69816 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 13FF51631E9598E700A69816 /* SIL Open Font License.txt */; };
-		13FF51781E96B74B00A69816 /* Todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 13FF51771E96B74A00A69816 /* Todo.rtf */; };
+		13FF51781E96B74B00A69816 /* Todo.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 13FF51771E96B74A00A69816 /* Todo.rtfd */; };
 		343A34EF1E940E2F00AE0555 /* ImageView+APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A34EE1E940E2F00AE0555 /* ImageView+APIRequest.swift */; };
 		343A34F31E94115900AE0555 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A34F21E94115900AE0555 /* ProductDetailsViewController.swift */; };
 		34A992601E9409AB00A33D5E /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A9925F1E9409AB00A33D5E /* ProductsTableViewCell.swift */; };
@@ -52,7 +52,7 @@
 		13FF51601E9598E700A69816 /* MontserratAlternates-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Regular.otf"; sourceTree = "<group>"; };
 		13FF51611E9598E700A69816 /* MontserratAlternates-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-SemiBold.otf"; sourceTree = "<group>"; };
 		13FF51631E9598E700A69816 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
-		13FF51771E96B74A00A69816 /* Todo.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Todo.rtf; sourceTree = "<group>"; };
+		13FF51771E96B74A00A69816 /* Todo.rtfd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.rtfd; path = Todo.rtfd; sourceTree = "<group>"; };
 		343A34EE1E940E2F00AE0555 /* ImageView+APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+APIRequest.swift"; sourceTree = "<group>"; };
 		343A34F21E94115900AE0555 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		34A9925F1E9409AB00A33D5E /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 		34BB9CE01E93FD77000F30F7 = {
 			isa = PBXGroup;
 			children = (
-				13FF51771E96B74A00A69816 /* Todo.rtf */,
+				13FF51771E96B74A00A69816 /* Todo.rtfd */,
 				34BB9CEB1E93FD77000F30F7 /* Shopping Training App */,
 				34BB9CEA1E93FD77000F30F7 /* Products */,
 			);
@@ -245,7 +245,7 @@
 				34BB9CF71E93FD77000F30F7 /* LaunchScreen.storyboard in Resources */,
 				13FF51641E9598E700A69816 /* Montserrat-Black.otf in Resources */,
 				34BB9CF41E93FD77000F30F7 /* Assets.xcassets in Resources */,
-				13FF51781E96B74B00A69816 /* Todo.rtf in Resources */,
+				13FF51781E96B74B00A69816 /* Todo.rtfd in Resources */,
 				13FF51701E9598E700A69816 /* MontserratAlternates-ExtraLight.otf in Resources */,
 				13FF51741E9598E700A69816 /* MontserratAlternates-SemiBold.otf in Resources */,
 				13FF51761E9598E700A69816 /* SIL Open Font License.txt in Resources */,
