@@ -129,9 +129,8 @@ extension CartViewController: UITableViewDataSource {
         productsCell.productLabel?.text = product.title!
         
         productsCell.priceLabel?.text =  "$" + product.price!
-        
-//        productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
-        
+        productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
+                
         return productsCell
         
     }
