@@ -1,5 +1,5 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf820
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \margl1440\margr1440\vieww9000\viewh8400\viewkind0
@@ -9,4 +9,9 @@
 \
 Finish "Buy page" - Can use either existing 'Product' object - or use Recently created 'Core Data' object. Refactor transition from Detail which currently points to Buy screen - instead to Cart transitions to Buy Screen.\
 \
-Finish Checkout page - This data needs to be populated from Core Data - Try implementing using an NSFetchedResultsController}
+Finish Checkout page - This data needs to be populated from Core Data - Try implementing using an NSFetchedResultsController\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 fix this in ProductsVC - 
+\f1\fs22  Attempting to load the view of a view controller while it is deallocating is not allowed and may result in undefined behavior (<UISearchController: 0x7fe41641d5d0>) 
+\f0\fs24 = {\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/32675001/uisearchcontroller-warning-attempting-to-load-the-view-of-a-view-controller"}}{\fldrslt http://stackoverflow.com/questions/32675001/uisearchcontroller-warning-attempting-to-load-the-view-of-a-view-controller}}}

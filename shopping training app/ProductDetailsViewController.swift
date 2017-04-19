@@ -24,6 +24,7 @@ class ProductDetailsViewController: UIViewController {
     
     var product:Product!
     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +47,6 @@ class ProductDetailsViewController: UIViewController {
         productImage.layer.shadowOpacity = 2.5
         productImage.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
         productImage.layer.shadowColor = yellowColor.cgColor
-
     }
     
     func setupUI() {
