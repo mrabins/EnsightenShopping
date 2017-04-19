@@ -21,6 +21,8 @@ class CartViewController: UIViewController {
     @IBOutlet weak var cartTableView: UITableView!
     @IBOutlet weak var statusLabel: UILabel!
     
+    
+    
     private let persistentContainer = NSPersistentContainer(name: "ShoppingTrainingApp")
     
     fileprivate lazy var fetchResultsController: NSFetchedResultsController <Productmodel> = {
@@ -89,8 +91,8 @@ class CartViewController: UIViewController {
     }
     
     private func setupView() {
+        self.navigationItem.title = "Cart"
         setUpStatusLabel()
-        
         updateView()
         
     }
@@ -117,11 +119,12 @@ extension CartViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        print("cellForRowAt cellForRowAt cellForRowAt")
-        
         productsCell = cartTableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProductsTableViewCell
         
         let product = fetchResultsController.object(at: indexPath)
+        
+        print("cellForRowAt cellForRowAt cellForRowAt \(product)")
+
         
         productsCell.productLabel?.text = product.title!
         
@@ -134,14 +137,13 @@ extension CartViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("numberOfRowsInSection")
-        
-        
         guard let product = fetchResultsController.fetchedObjects else { return 0 }
-        print("Products count is \(product.count)")
-        
         return product.count
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250.0
     }
     
 }
@@ -149,10 +151,9 @@ extension CartViewController: UITableViewDataSource {
 extension CartViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("diddseslct")
-        //        let indexPath = cartTableView.indexPathForSelectedRow
-        
-        //        let product = products[(indexPath?.row)!]
+//                let indexPath = cartTableView.indexPathForSelectedRow
+//        
+//                let product = products[(indexPath?.row)!]
         
         // ** Handle segue **
         
