@@ -102,7 +102,4 @@ class ProductDetailsViewController: UIViewController {
         }
         
     }
-    
-    
-    
 }

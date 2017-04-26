@@ -57,11 +57,6 @@ class ProductsViewController: UIViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func setUpNavBar() {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imageView.contentMode = .scaleAspectFit
@@ -109,7 +104,7 @@ extension ProductsViewController: UITableViewDataSource {
             productsCell.priceLabel?.text = "$" + product.price!
         }
         productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
-        
+
         return productsCell
         
     }
@@ -121,7 +116,6 @@ extension ProductsViewController: UITableViewDataSource {
             return filteredProducts.count
         }
         return products.count
-
     }
 }
 
