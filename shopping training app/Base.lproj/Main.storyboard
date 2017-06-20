@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="32S-yt-YQS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="32S-yt-YQS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,25 +55,49 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DXb-Ll-fvw">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DXb-Ll-fvw">
                                                     <rect key="frame" x="50" y="8" width="275" height="155"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="155" id="fGo-ni-vZU"/>
+                                                        <constraint firstAttribute="width" constant="275" id="hMA-YX-RYa"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="9LQ-tE-Er2">
-                                                    <rect key="frame" x="50" y="178" width="111.5" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="9LQ-tE-Er2">
+                                                    <rect key="frame" x="50" y="186" width="275" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="275" id="FJL-lk-BKg"/>
+                                                        <constraint firstAttribute="height" constant="19" id="naC-q3-bS6"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXB-QI-ccN">
-                                                    <rect key="frame" x="50" y="212" width="32" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXB-QI-ccN">
+                                                    <rect key="frame" x="50" y="217" width="275" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="275" id="XFS-wc-eWD"/>
+                                                        <constraint firstAttribute="height" constant="16" id="ttN-IN-507"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kXB-QI-ccN" secondAttribute="trailing" constant="42" id="3cS-vw-NdJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kXB-QI-ccN" secondAttribute="bottom" constant="8.5" id="4V8-sC-9ng"/>
+                                                <constraint firstItem="9LQ-tE-Er2" firstAttribute="leading" secondItem="9rq-5z-OxD" secondAttribute="leadingMargin" constant="42" id="5Uf-Gi-uPz"/>
+                                                <constraint firstItem="9LQ-tE-Er2" firstAttribute="top" secondItem="DXb-Ll-fvw" secondAttribute="bottom" constant="23" id="Fm6-sl-8Kf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9LQ-tE-Er2" secondAttribute="trailing" constant="42" id="Hey-44-er5"/>
+                                                <constraint firstItem="DXb-Ll-fvw" firstAttribute="centerX" secondItem="9rq-5z-OxD" secondAttribute="centerX" id="P8C-ER-5a6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DXb-Ll-fvw" secondAttribute="trailing" constant="42" id="bbW-iS-p9f"/>
+                                                <constraint firstItem="kXB-QI-ccN" firstAttribute="leading" secondItem="9rq-5z-OxD" secondAttribute="leadingMargin" constant="42" id="dKa-3i-oui"/>
+                                                <constraint firstItem="DXb-Ll-fvw" firstAttribute="top" secondItem="9rq-5z-OxD" secondAttribute="topMargin" id="ijc-OV-QT9"/>
+                                                <constraint firstItem="9LQ-tE-Er2" firstAttribute="top" secondItem="DXb-Ll-fvw" secondAttribute="bottom" constant="22.5" id="njg-JV-q64"/>
+                                                <constraint firstItem="kXB-QI-ccN" firstAttribute="top" secondItem="9LQ-tE-Er2" secondAttribute="bottom" constant="12" id="nkN-h0-GuL"/>
+                                                <constraint firstItem="kXB-QI-ccN" firstAttribute="top" secondItem="9LQ-tE-Er2" secondAttribute="bottom" constant="12" id="sIh-qS-f2Z"/>
+                                                <constraint firstItem="DXb-Ll-fvw" firstAttribute="leading" secondItem="9rq-5z-OxD" secondAttribute="leadingMargin" constant="42" id="x6X-cO-6WS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>

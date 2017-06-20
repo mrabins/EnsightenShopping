@@ -144,7 +144,6 @@ extension CartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250.0
     }
-    
 }
 
 extension CartViewController: UITableViewDelegate {
