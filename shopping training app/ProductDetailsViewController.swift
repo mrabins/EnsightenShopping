@@ -21,10 +21,8 @@ class ProductDetailsViewController: UIViewController {
     let yellowColor = UIColor(red: 255.0/255.0, green: 180.0/255.0, blue: 0/255.0, alpha: 0.5)
     
     var segueString = String()
-    
     var product:Product!
-    
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -9,24 +9,18 @@
 import Foundation
 
 class APIHandler {
-   class func callAPI(_ success: @escaping (_ products: [Product]) -> (), error errorCallback: @escaping (_ errorMessage: String) -> ()) {
+    class func callAPI(_ success: @escaping (_ products: [Product]) -> (), error errorCallback: @escaping (_ errorMessage: String) -> ()) {
         
         let postEndpoint = "http://ensightendemo.com/etc/product-api.json"
         let session = URLSession.shared
         let url = URL(string: postEndpoint)!
         let request = URLRequest(url: url)
-
-
+        
         let task = session.dataTask(with: request, completionHandler: {(data, response, error) -> Void in
             if let data = data {
-                print("THIS ONE IS PRINTED, TOO")
                 if let response = response as? HTTPURLResponse , 200...299 ~= response.statusCode {
-                    //taskCallback(true, json as AnyObject?)
-                    
                     do {
                         if NSString(data:data, encoding: String.Encoding.utf8.rawValue) != nil {
-                            
-                            //let json = try? JSONSerialization.jsonObject(with: data, options: [])
                             
                             // Parse the Json
                             let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
@@ -49,10 +43,7 @@ class APIHandler {
                     } catch {
                         print("Data was not properly formatted")
                     }
-
-                    
                 } else {
-                    //taskCallback(false, json as AnyObject?)
                     print("Not a 200 response")
                     errorCallback(error as! String)
                     return

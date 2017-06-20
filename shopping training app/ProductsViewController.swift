@@ -29,7 +29,7 @@ class ProductsViewController: UIViewController {
         searchController.searchBar.delegate = self
         definesPresentationContext = true
         searchController.dimsBackgroundDuringPresentation = false
-
+        
         productsTableView.tableHeaderView = searchController.searchBar
         
         self.navigationItem.rightBarButtonItem?.image = UIImage(named:"shoppingbasket")?.withRenderingMode(.alwaysOriginal)
@@ -70,6 +70,7 @@ class ProductsViewController: UIViewController {
     func filterContentForSearchText(_ searchText: String) {
         filteredProducts = products.filter({( product : Product) -> Bool in
             return product.title!.lowercased().contains(searchText.lowercased())
+            
         })
         productsTableView.reloadData()
     }
@@ -78,12 +79,8 @@ class ProductsViewController: UIViewController {
 
 extension ProductsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         productsCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ProductsTableViewCell
-        
         let product: Product
-
         if searchController.isActive && searchController.searchBar.text != "" {
             product = filteredProducts[indexPath.row]
         } else {
@@ -104,14 +101,12 @@ extension ProductsViewController: UITableViewDataSource {
             productsCell.priceLabel?.text = "$" + product.price!
         }
         productsCell.productImageView.imageFromServerURL(urlString: product.image!, defaultImage: "NoImage")
-
+        
         return productsCell
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
         if searchController.isActive && searchController.searchBar.text != "" {
             return filteredProducts.count
         }
@@ -122,7 +117,19 @@ extension ProductsViewController: UITableViewDataSource {
 extension ProductsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let indexPath = tableView.indexPathForSelectedRow
-        let product = products[(indexPath?.row)!]
+        
+        let product: Product
+        
+        
+        
+        if filteredProducts.count >= 1 {
+             product = filteredProducts[(indexPath?.row)!]
+        } else {
+             product = products[(indexPath?.row)!]
+
+        }
+        
+        print("the product is \(product)", type(of: product))
         performSegue(withIdentifier: "productToDetailsSegue", sender: product)
     }
 }
