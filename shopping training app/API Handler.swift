@@ -25,10 +25,8 @@ class APIHandler {
                             // Parse the Json
                             let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
                             
-                            guard let products = jsonDictionary["products"] as? NSArray else {
-                                
-                                return }
-                            
+                            guard let products = jsonDictionary["products"] as? NSArray else {return }
+                                                        
                             var result: [Product] = []
                             
                             for product in products {
